@@ -1,0 +1,11 @@
+let express=require('express')
+const { addadmin, login, islogin, addres, getres, getresbyhno, update, del } = require('../controlers/resportcon')
+let route=new express.Router()
+route.post("/addadmin",addadmin)
+route.post("/login",login)
+route.post("/addres",islogin,addres)
+route.get("/getres",islogin,getres)
+route.get("/getbyhno/:hno",getresbyhno)
+route.put("/update",islogin,update)
+route.delete("/del/:hno",islogin,del)
+module.exports=route
